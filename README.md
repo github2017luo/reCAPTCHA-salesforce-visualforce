@@ -1,4 +1,4 @@
 # reCAPTCHA-salesforce-visualforce
 Google reCAPTAHC on Salesforce(Visualforce Page)
 
-https://github.com/yhayashi30/reCAPTCHA-salesforce-visualforce/blob/master/reCAPTCHA-salesforce-visualforce.gif
+https://s3-ap-northeast-1.amazonaws.com/yhayashi30/demo_gif/reCAPTCHA-salesforce-visualforce.gif
