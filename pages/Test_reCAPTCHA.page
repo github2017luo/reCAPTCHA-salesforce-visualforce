@@ -1,0 +1,31 @@
+<apex:page controller="reCAPTCHAController">
+<head>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script type="text/javascript">
+    	function clearcall(token){
+            if(token !== ""){
+                document.getElementById("{!$Component.registForm.blockId.blockSectionId.token}").value = token;
+			}
+        }
+    </script>
+</head>
+<body>
+    <apex:form id="registForm">
+        <apex:pageBlock title="My Content" mode="edit" id="blockId">
+            <apex:pageBlockSection title="My Content Section" columns="1" id="blockSectionId">
+                <apex:inputHidden value="{!token}" id="token"/>
+                <div class="g-recaptcha" data-callback="clearcall" data-sitekey="{!publicKey}"></div>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!regist}" value="Regist" />
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+    <apex:form id="resetForm">
+        <apex:outputPanel >
+            <h3>Correct Human Response : {!correctResponse}</h3><br />
+            <apex:commandButton action="{!reset}" value="Reset" />
+        </apex:outputPanel>
+    </apex:form>
+</body>
+</apex:page>
